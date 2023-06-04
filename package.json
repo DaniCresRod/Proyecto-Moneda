@@ -1,0 +1,14 @@
+{
+  "name": "proyecto-moneda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass-watcher": "npx sass --watch src/sass:Public/Style"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.62.1"
+  }
+}

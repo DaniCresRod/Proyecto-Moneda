@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Della+Respira&display=swap');
+
+*{
+    margin:0;
+    background-color: bisque;
+    font-family: 'Della Respira', serif;
+
+    body{
+        margin:5vh auto;
+
+        main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            text-align: center;
+            min-height: 90vh;
+            
+
+            #coin_case{border:1px solid black;
+                max-width: 40vw;
+                min-height: 60vh;
+                height: 40vh;
+                display: flex; 
+                align-items: center;                         
+
+                @keyframes toss_coin_head {
+                    from{
+                        transform: rotateY(0deg);
+                    }
+                    50%{
+                        transform: rotateY(180deg);
+                        content: url("../Resources/Images/tail.png");
+                    }
+                    to{
+                        transform: rotateY(360deg);
+                        content: url("../Resources/Images/head.png");
+                    }               
+                }
+
+                @keyframes toss_coin_tail {
+                    from{
+                        transform: rotateY(0deg);
+                    }
+                    to{
+                        transform: rotateY(180deg);
+                        content: url("../Resources/Images/tail.png");
+                    }                               
+                }
+
+                img{ 
+                    margin: 0 auto;
+                    width: 80%; 
+                    animation-duration: 3s;
+                    animation-iteration-count: infinite;
+                    animation-name: toss_coin_head;
+                    
+                    box-shadow: inset 0px 0px 100px 80px goldenrod;
+                    border-radius: 50%;                
+                    border-bottom: 5px solid black;
+
+                    max-height: 75vh;
+
+                    content: url("../Resources/Images/head.png");
+                }
+            }
+
+            #control_case{border:1px solid black;
+                width: 30vw;
+                height: 40vh;
+                font-weight: bolder;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                min-height: 60vh;
+
+
+                div{
+                    border:1px solid black;
+                    margin: 2vh auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: 80%;                
+
+                    input{
+                        border:0;
+                        border-bottom: 2px solid goldenrod;
+                        width: 60%;
+                        border-radius: 25%;
+                        margin: 1.5vh auto;
+                    }
+                }
+
+                #button_case{
+                    flex-direction: row;
+                    gap: 2vw;
+
+                    button{
+                        border-radius: 15%;
+                        border: 2px solid goldenrod;
+                        font-weight: bolder;
+                        border-style: outset;
+                        background-color: gold;
+                        width: 50%;
+                        min-width: 10vw;
+                        font-size: 3vw;
+                        height: 100%;
+                    }
+                }
+            }            
+        }
+        @media screen and (width < 500px) {
+            
+            margin: 1vh auto;
+            max-height: 100vh;
+
+            main::before{
+                content: "Toss a coin";
+                font-weight: bolder;
+                font-size: 4vh;
+            }
+
+            main{
+                flex-direction: column;
+                top: 3vh; 
+
+                #coin_case{
+                    max-width: 80vw;
+                    background: transparent; 
+                    min-height: 0;                    
+                }                
+
+                #control_case{
+                    width: 80vw;
+                    flex-direction: column-reverse;
+                    justify-content: flex-end;
+                    height: auto;
+                    min-height: 0;
+                    margin-bottom: 0;
+                    gap:0;
+
+                    h1{
+                        display:none
+                    }
+                    
+                    div{
+                        width: 80%;
+                    }
+                }
+            }
+        }                
+    }
+}
