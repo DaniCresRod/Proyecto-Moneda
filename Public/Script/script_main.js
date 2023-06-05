@@ -56,15 +56,20 @@ imgCoin.addEventListener("animationiteration", function(){
             time=time+1;
             break;
         }
-        case 31:{
+        case 30:{
             imgCoin.style.animationIterationCount=1;
             if(resultado%2==0){
-                  itsATail=true;                          
+                  itsATail=true; 
+                  nOfTails++;                         
             }
+            else{
+                nOfHeads++;
+            }
+            RefreshQty();
             break;
         }
     }
-    
+
     if(itsATail){
         imgCoin.addEventListener("animationend", addEvenNumber());       
     }
@@ -80,6 +85,16 @@ imgCoin.addEventListener("animationiteration", function(){
 function addEvenNumber(){ 
     imgCoin.classList.add("evenNumber");
 }
+
+function RefreshQty(){
+    document.getElementById("qty_head").value=nOfHeads;
+    document.getElementById("qty_tail").value=nOfTails;
+}
+
+document.getElementById("btn_reset").addEventListener("click", ()=>{
+    nOfHeads=0;
+    nOfTails=0;
+});
 
 
 

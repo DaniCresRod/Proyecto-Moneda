@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Della+Respira&display=swap');
 
+$backg-color:bisque;
+
 *{
     margin:0;
-    background-color: bisque;
+    
     font-family: 'Della Respira', serif;
 
     body{
         margin:5vh auto;
+        background-color: rgb(35, 104, 85);
 
         main{
             display: flex;
@@ -14,12 +17,14 @@
             justify-content: center;
             flex-direction: row;
             text-align: center;
-            min-height: 90vh;
-            
+            min-height: 90vh;            
 
-            #coin_case{border:1px solid black;
+            #coin_case{ 
+                background-color:$backg-color;
+                border-radius: 15px 0 0 15px;
+
                 max-width: 40vw;
-                min-height: 60vh;
+                min-height: 70vh;
                 height: 40vh;
                 display: flex; 
                 align-items: center;                         
@@ -82,22 +87,20 @@
                 }
             }
 
-            #control_case{border:1px solid black;
+            #control_case{
+                background-color:$backg-color;
+                border-radius: 0 15px 15px 0;
+
                 width: 30vw;
-                height: 40vh;
+                height: 70vh;
+                min-height: 70vh; 
                 font-weight: bolder;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
                 min-height: 60vh;
 
-                form{
-                    
-                }
-
-
                 div{
-                    border:1px solid black;
                     margin: 2vh auto;
                     display: flex;
                     flex-direction: column;
@@ -114,6 +117,7 @@
                         text-align: center;
                         font-size: 1rem;
                         font-weight: bold;
+                        pointer-events: none;                    
                     }
                 }
 
@@ -143,16 +147,22 @@
             main::before{
                 content: "Toss a coin";
                 font-weight: bolder;
-                font-size: 4vh;
+                font-size: 3.5vh;
+                
+                background-color:$backg-color;
+                border-radius: 15px 15px 0 0;
+                width: 80vw;
             }
 
             main{
                 flex-direction: column;
                 top: 3vh; 
+                
 
                 #coin_case{
-                    max-width: 80vw;
-                    background: transparent; 
+                    min-width: 80vw;
+                    background-color: $backg-color;
+                    border-radius: 0;
                     min-height: 0;                    
                 }                
 
@@ -164,6 +174,8 @@
                     min-height: 0;
                     margin-bottom: 0;
                     gap:0;
+
+                    border-radius: 0 0 15px 15px;
 
                     h1{
                         display:none
