@@ -62,6 +62,7 @@
                     animation-name: toss_coin_tail;
                     animation-iteration-count: 1;
                     animation-duration: 2s;
+                    animation-fill-mode: forwards;
                 }
 
                 img{ 

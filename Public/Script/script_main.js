@@ -17,10 +17,11 @@ let itsATail=false;
 
 document.getElementById("btn_toss").addEventListener("click", function(){
     imgCoin.classList.remove("evenNumber");
-    imgCoin.classList.toggle("active");
+
     imgCoin.style.animationIterationCount="infinite";
     laps=0;
     time=2;
+    
     resultado=Math.floor(Math.random()*10);
     console.log(resultado);    
 });
@@ -60,31 +61,24 @@ imgCoin.addEventListener("animationiteration", function(){
             if(resultado%2==0){
                   itsATail=true;                          
             }
-
             break;
         }
-    }    
+    }
     
     if(itsATail){
-        imgCoin.addEventListener("animationend", addEvenNumber());
-        imgCoin.removeEventListener("animationend", addEvenNumber());  
-        itsATail=false;
+        imgCoin.addEventListener("animationend", addEvenNumber());       
     }
     else{
         imgCoin.style.animationDuration=time+"s";
-        laps++;
+        
     }
+    laps++;
+    itsATail=false;
     
 });
 
-function addEvenNumber(){
-    console.log("hola tu"); 
+function addEvenNumber(){ 
     imgCoin.classList.add("evenNumber");
-    
-    imgCoin.addEventListener("animationend",function(){
-        console.log("holi");
-        imgCoin.style.content= "url('./Resources/Images/tail.png')";
-    });
 }
 
 
