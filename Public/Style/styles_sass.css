@@ -26,10 +26,17 @@
 @keyframes toss_coin_head {
   from {
     transform: rotateY(0deg);
+    content: url("../Resources/Images/head.png");
+  }
+  25% {
+    transform: rotateY(90deg);
   }
   50% {
     transform: rotateY(180deg);
     content: url("../Resources/Images/tail.png");
+  }
+  75% {
+    transform: rotateY(270deg);
   }
   to {
     transform: rotateY(360deg);
@@ -40,16 +47,24 @@
   from {
     transform: rotateY(0deg);
   }
+  50% {
+    transform: rotateY(90deg);
+  }
   to {
     transform: rotateY(180deg);
     content: url("../Resources/Images/tail.png");
   }
 }
+* body main #coin_case .evenNumber {
+  animation-name: toss_coin_tail;
+  animation-iteration-count: 1;
+  animation-duration: 2s;
+}
 * body main #coin_case img {
   margin: 0 auto;
   width: 80%;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-iteration-count: 0;
   animation-name: toss_coin_head;
   box-shadow: inset 0px 0px 100px 80px goldenrod;
   border-radius: 50%;
@@ -82,6 +97,9 @@
   width: 60%;
   border-radius: 25%;
   margin: 1.5vh auto;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
 }
 * body main #control_case #button_case {
   flex-direction: row;

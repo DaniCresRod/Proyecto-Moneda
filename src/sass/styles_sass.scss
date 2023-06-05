@@ -27,10 +27,17 @@
                 @keyframes toss_coin_head {
                     from{
                         transform: rotateY(0deg);
+                        content: url("../Resources/Images/head.png");
+                    }
+                    25%{
+                        transform: rotateY(90deg);
                     }
                     50%{
                         transform: rotateY(180deg);
                         content: url("../Resources/Images/tail.png");
+                    }
+                    75%{
+                        transform: rotateY(270deg);
                     }
                     to{
                         transform: rotateY(360deg);
@@ -42,17 +49,26 @@
                     from{
                         transform: rotateY(0deg);
                     }
+                    50%{
+                        transform: rotateY(90deg);
+                    }
                     to{
                         transform: rotateY(180deg);
                         content: url("../Resources/Images/tail.png");
                     }                               
                 }
 
+                .evenNumber{
+                    animation-name: toss_coin_tail;
+                    animation-iteration-count: 1;
+                    animation-duration: 2s;
+                }
+
                 img{ 
                     margin: 0 auto;
                     width: 80%; 
-                    animation-duration: 3s;
-                    animation-iteration-count: infinite;
+                    animation-duration: 2s;
+                    animation-iteration-count: 0;
                     animation-name: toss_coin_head;
                     
                     box-shadow: inset 0px 0px 100px 80px goldenrod;
@@ -74,6 +90,10 @@
                 justify-content: space-evenly;
                 min-height: 60vh;
 
+                form{
+                    
+                }
+
 
                 div{
                     border:1px solid black;
@@ -90,6 +110,9 @@
                         width: 60%;
                         border-radius: 25%;
                         margin: 1.5vh auto;
+                        text-align: center;
+                        font-size: 1rem;
+                        font-weight: bold;
                     }
                 }
 
