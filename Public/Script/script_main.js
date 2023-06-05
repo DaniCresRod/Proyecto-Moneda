@@ -1,6 +1,9 @@
 let nOfHeads=0;
 let nOfTails=0;
 
+let spinSound=new Audio("./Resources/Audio/coin_flip.m4a");
+let fallSound=new Audio("./Resources/Audio/coin.m4a");
+
 //Programacion del boton reset
 document.getElementById("btn_reset").addEventListener("click", function(){
     document.getElementById("qty_tail").value=0;
@@ -23,7 +26,8 @@ document.getElementById("btn_toss").addEventListener("click", function(){
     time=2;
     
     resultado=Math.floor(Math.random()*10);
-    console.log(resultado);    
+    console.log(resultado);
+    
 });
 
 imgCoin.addEventListener("animationiteration", function(){
@@ -38,6 +42,8 @@ imgCoin.addEventListener("animationiteration", function(){
         }
         case 5:{
             time=time-0.2;
+            spinSound.playbackRate=0.4;
+            spinSound.play();
             break;
         }
         case 10:{
@@ -53,10 +59,12 @@ imgCoin.addEventListener("animationiteration", function(){
             break;
         }
         case 27:{
-            time=time+1;
+            time=time+1;            
             break;
         }
         case 30:{
+            fallSound.playbackRate=0.5;
+            fallSound.play();
             imgCoin.style.animationIterationCount=1;
             if(resultado%2==0){
                   itsATail=true; 
